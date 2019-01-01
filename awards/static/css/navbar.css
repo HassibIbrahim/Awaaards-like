@@ -25,7 +25,13 @@ input {
 }
 
 .navbar-brand {
-    /* margin-top: 8px; */
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-brand img {
+    margin-left: 70px;
+    float: none;
 }
 
 .instagramlogo {
