@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import categories,technologies,colors,countries,Project,Profile
+from .models import categories,technologies,colors,countries,Project,Profile,Rating
  
   
 class ProjectAdmin(admin.ModelAdmin):
@@ -12,3 +12,4 @@ admin.site.register(colors)
 admin.site.register(countries)
 admin.site.register(Project,ProjectAdmin)
 admin.site.register(Profile)
+admin.site.register(Rating)

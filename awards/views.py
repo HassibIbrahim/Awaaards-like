@@ -20,6 +20,9 @@ def index(request):
     winners=Project.objects.all()
     caraousel = Project.objects.get(id=8)
 
+    if current_user =='AnonymousUser':
+        return redirect('registration/login.html')
+
     return render(request,'index.html',{"winners":winners,"profile":profile,"caraousel":caraousel,"date":date})
  
 def create_profile(request):

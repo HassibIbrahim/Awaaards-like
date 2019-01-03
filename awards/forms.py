@@ -1,5 +1,5 @@
 from django import forms
-from .models import Project,Profile
+from .models import Project,Profile,Rating
  
 class ProjectForm(forms.ModelForm):
     class Meta:
@@ -18,3 +18,8 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model=Profile
         exclude=['username']
+
+class RatingForm(forms.ModelForm):
+    class Meta:
+        model=Rating
+        exclude=['profile','project','overall_score']
