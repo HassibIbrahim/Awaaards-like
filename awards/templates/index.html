@@ -14,11 +14,11 @@
 {% block content %}
 
     <div class="carousel-inner">
-
+      <!-- <div class="landingpage" style="background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url({% static 'img/cocaine.png'%}) fixed;"> -->
       <div class="landingpage" >
         <img src="{{caraousel.landing_page.url}}" class="landingpage-img">
         <div class="time">
-          <p><span class="bold">Site of the day</span>{{date}}</p>
+          <p><span class="bold">Site of the day </span>    {{date}}</p>
         </div>
 
         <div class="header">
@@ -46,7 +46,7 @@
             	<strong></strong>
               <p class="rating">CONTENT</p>
             </div>
-      
+
           </div>
       </div>
     </div>
@@ -57,13 +57,13 @@
 </div>
 <div class="pages">
 <div class="row">
-   {% for winner in winners %}
+  {% for winner in winners %}
   <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
     <div class="card" style="width: 40.2rem;">
   <img class="card-img-top img-responsive" src="{{winner.landing_page.url}}" alt="Card image cap" responsive>
   <div class="card-body">
     <h5 class="card-title" style="line-height:28px;">{{winner.title}}</h5>
-    <p class="card-text">{{winner.country}}<span class="date">{{winner.post_date}}</span></p>
+    <p class="card-text">From {{winner.country}}<span class="date">{{winner.post_date}}</span></p>
   </div>
   <div class="card-footer ">
     <div class="user-image">
@@ -73,55 +73,7 @@
   </div>
 </div>
   </div>
-{% endfor %}
-<!--  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/cocaine.png'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Cocaine Route - Heart of Drugs</h5>
-    <p class="card-text">From Mexico <span class="date">November 10,2018</span></p>
-  </div>
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar1.png'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">JOY</p>
-  </div>
-  </div>
-</div>
-  </div> -->
-
-  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/test3.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Lessons in Life</h5>
-    <p class="card-text">From Kenya <span class="date">October 6,2018</span></p>
-  </div>
-
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar2.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">MUSA</p>
-  </div>
-  </div>
-</div>
-  </div>
-
-  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/test2.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Whispers</h5>
-    <p class="card-text">From Paris <span class="date">September 26,2018</span></p>
-  </div>
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar3.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">SAIDI</p>
-  </div>
-  </div>
-</div>
-  </div>
+  {% endfor %}
 </div>
 </div>
 
@@ -131,70 +83,24 @@
 
 <div class="pages">
 <div class="row">
+  {% for nominee in nominees %}
   <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
     <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/trial1.png'%}" alt="Card image cap" responsive>
+  <img class="card-img-top img-responsive" src="{{nominee.landing_page.url}}" alt="Card image cap" responsive>
   <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Living Memories</h5>
-    <p class="card-text">From Sweden <span class="date">November 16,2018</span></p>
+    <h5 class="card-title" style="line-height:28px;">{{nominee.title}}</h5>
+    <p class="card-text">From {{nominee.country}}<span class="date">{{nominee.post_date}}</span></p>
   </div>
   <div class="card-footer ">
     <div class="user-image">
-    <img src="{% static 'img/avatar4.png'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">SANDE</p>
+    <img src="{{nominee.avatar.url}}" class="gallery-image" alt=""  width=8 height=8>
+    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;text-transform: uppercase;">{{nominee.username}}</p>
   </div>
   </div>
 </div>
   </div>
+  {% endfor %}
 
-  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/trail4.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Cocaine Route - Heart of Drugs</h5>
-    <p class="card-text">From Mexico <span class="date">November 10,2018</span></p>
-  </div>
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar5.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">MBATHA</p>
-  </div>
-  </div>
-</div>
-  </div>
-
-  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/trial3.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Lessons in Life</h5>
-    <p class="card-text">From Kenya <span class="date">October 6,2018</span></p>
-  </div>
-
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar6.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">SMITH</p>
-  </div>
-  </div>
-</div>
-  </div>
-
-  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/trial5.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Whispers</h5>
-    <p class="card-text">From Paris <span class="date">September 26,2018</span></p>
-  </div>
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar5.png'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">ADAM</p>
-  </div>
-  </div>
-</div>
-  </div>
 </div>
 </div>
 
@@ -219,54 +125,24 @@
 </div>
   </div>
 
+  {% for directory in directories %}
   <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
     <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/trail4.jpeg'%}" alt="Card image cap">
+  <img class="card-img-top img-responsive" src="{{directory.landing_page.url}}" alt="Card image cap" responsive>
   <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Cocaine Route - Heart of Drugs</h5>
-    <p class="card-text">From Mexico <span class="date">November 10,2018</span></p>
+    <h5 class="card-title" style="line-height:28px;">{{directory.title}}</h5>
+    <p class="card-text">From {{directory.country}}<span class="date">{{directory.post_date}}</span></p>
   </div>
   <div class="card-footer ">
     <div class="user-image">
-    <img src="{% static 'img/avatar7.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">MUADH</p>
+    <img src="{{directory.avatar.url}}" class="gallery-image" alt=""  width=8 height=8>
+    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;text-transform: uppercase;">{{directory.username}}</p>
   </div>
   </div>
 </div>
   </div>
+  {% endfor %}
 
-  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/trial3.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Lessons in Life</h5>
-    <p class="card-text">From Kenya <span class="date">October 6,2018</span></p>
-  </div>
-
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar7.png'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">FADYA</p>
-  </div>
-  </div>
-</div>
-  </div>
-
-  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/trial5.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Whispers</h5>
-    <p class="card-text">From Paris <span class="date">September 26,2018</span></p>
-  </div>
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar8.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">HADIJA</p>
-  </div>
-  </div>
-</div>
-  </div>
 </div>
 </div>
 
@@ -277,139 +153,46 @@
 
 <div class="pages">
 <div class="row">
+  {% for resource in resources %}
   <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
     <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/cars1.jpeg'%}" alt="Card image cap" responsive>
+  <img class="card-img-top img-responsive" src="{{resource.landing_page.url}}" alt="Card image cap" responsive>
   <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Living Memories</h5>
-    <p class="card-text">From Sweden <span class="date">November 16,2018</span></p>
+    <h5 class="card-title" style="line-height:28px;">{{resource.title}}</h5>
+    <p class="card-text">From {{resource.country}}<span class="date">{{resource.post_date}}</span></p>
   </div>
   <div class="card-footer ">
     <div class="user-image">
-    <img src="{% static 'img/avatar9.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">BRAYO</p>
+    <img src="{{resource.avatar.url}}" class="gallery-image" alt=""  width=8 height=8>
+    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;text-transform: uppercase;">{{resource.username}}</p>
   </div>
   </div>
 </div>
   </div>
+  {% endfor %}
 
-  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/cars2.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Cocaine Route - Heart of Drugs</h5>
-    <p class="card-text">From Mexico <span class="date">November 10,2018</span></p>
-  </div>
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar10.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">YAKIIN</p>
-  </div>
-  </div>
-</div>
-  </div>
-
-  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/car3.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Lessons in Life</h5>
-    <p class="card-text">From Kenya <span class="date">October 6,2018</span></p>
-  </div>
-
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar11.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">HIGA</p>
-  </div>
-  </div>
-</div>
-  </div>
-
-  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/car4.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Whispers</h5>
-    <p class="card-text">From Paris <span class="date">September 26,2018</span></p>
-  </div>
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar14.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">AAFREEN</p>
-  </div>
-  </div>
-</div>
-  </div>
 </div>
 </div>
 
 <div class="pages">
 <div class="row">
+  {% for resource in resources2 %}
   <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
     <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/car5.jpeg'%}" alt="Card image cap" responsive>
+  <img class="card-img-top img-responsive" src="{{resource.landing_page.url}}" alt="Card image cap" responsive>
   <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Living Memories</h5>
-    <p class="card-text">From Sweden <span class="date">November 16,2018</span></p>
+    <h5 class="card-title" style="line-height:28px;">{{resource.title}}</h5>
+    <p class="card-text">From {{resource.country}}<span class="date">{{resource.post_date}}</span></p>
   </div>
   <div class="card-footer ">
     <div class="user-image">
-    <img src="{% static 'img/avatar13.png'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">TAMARA</p>
+    <img src="{{resource.avatar.url}}" class="gallery-image" alt=""  width=8 height=8>
+    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;text-transform: uppercase;">{{resource.username}}</p>
   </div>
   </div>
 </div>
   </div>
-
-  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/halo.jpg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Cocaine Route - Heart of Drugs</h5>
-    <p class="card-text">From Mexico <span class="date">November 10,2018</span></p>
-  </div>
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar15.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">ANNE</p>
-  </div>
-  </div>
-</div>
-  </div>
-
-  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/car6.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Lessons in Life</h5>
-    <p class="card-text">From Kenya <span class="date">October 6,2018</span></p>
-  </div>
-
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar16.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">RANIA</p>
-  </div>
-  </div>
-</div>
-  </div>
-
-  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-    <div class="card" style="width: 40.2rem;">
-  <img class="card-img-top img-responsive" src="{% static 'img/car7.jpeg'%}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="line-height:28px;">Whispers</h5>
-    <p class="card-text">From Paris <span class="date">September 26,2018</span></p>
-  </div>
-  <div class="card-footer ">
-    <div class="user-image">
-    <img src="{% static 'img/avatar17.jpeg'%}" class="gallery-image" alt=""  width=8 height=8>
-    <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;">LUKMAN</p>
-  </div>
-  </div>
-</div>
-  </div>
+  {% endfor %}
 </div>
 </div>
 
@@ -453,8 +236,10 @@ $('#circle-d').circleProgress({
 		color: 'SteelBlue'
 	}
 });
-
-
+// $.each($('.circle'), function(){
+// var price = $(this).html();
+// $(this).html(value.replace(/(\d*\.)(\d*)/,'<span style="font-size:16px;">$1</span><span style="font-size:22px;">$2</span><span style="font-size:14px;">$3</span>'));
+// });
 </script>
 
 {% endblock %}
